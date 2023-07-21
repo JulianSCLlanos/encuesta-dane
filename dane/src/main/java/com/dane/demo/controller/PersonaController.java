@@ -5,10 +5,10 @@ import com.dane.demo.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/persona")
@@ -31,8 +31,8 @@ public class PersonaController {
         return this.personaService.modifyPerson(persona);
     }
 
-    @PostMapping("/{id}")
-    public Boolean deletePersona(@RequestParam Long idPersona){
-        return this.personaService.deletePerson(idPersona);
+    @PostMapping(value = "/{id}")
+    public Boolean deletePersona(@PathVariable(value = "id") Long id){
+        return this.personaService.deletePerson(id);
     }
 }

@@ -1,13 +1,15 @@
-package com.dane.demo.repository;
+package com.dane.demo.service;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.dane.demo.model.Persona;
-import com.dane.demo.service.PersonaService;
+import com.dane.demo.repository.PersonaRepository;
 
-public class PersonaRepositoryImplement implements PersonaService {
+@Service
+public class PersonaServiceImplement implements PersonaService {
 
     @Autowired
     private PersonaRepository personaRepository;
